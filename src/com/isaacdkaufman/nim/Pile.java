@@ -15,12 +15,16 @@ public class Pile
 	// construct Pile object with given number of indicies in the ArrayList
 	public Pile (int numGelt)
 	{
+		// create the ArrayList
 		this.gelt = new ArrayList<Object>(numGelt);
+
+		// populate the ArrayList
 		populateList(numGelt);
 	}
 
-	public void populateList(int numGelt)
+	private void populateList(int numGelt)
 	{
+		// fill ArrayList with null Objects - TODO change this implementation maybe - Does it make sense to do it this way?
 		for (int i = 0; i < numGelt; i++)
 		{
 			this.gelt.add(new Object());
