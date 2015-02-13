@@ -24,7 +24,7 @@ public class Pile
 		// amount of indicies for use when repopulating the ArrayList
 		this.indicies = numGelt;
 
-		// populate the ArrayList
+		// populate the ArrayList - TODO change implementation maybe
 		fillPile();
 	}
 
@@ -37,11 +37,13 @@ public class Pile
 		}
 	}
 
+	// get current size of Arraylist
 	public int getSize ()
 	{
 		return this.gelt.size();
 	}
 
+	// pop a given number of elements off of the ArrayList - alters value .size() returns
 	public void takeGelt (int numGelt)
 	{
 		for (int i = 0; i < numGelt; i++)
