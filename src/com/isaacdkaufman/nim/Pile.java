@@ -56,6 +56,7 @@ public class Pile
 	{
 		return this.getObjectsLeft() < 1;
 	}
+
 	public Pile clone ()
 	{
 		return new Pile(this.indicies);

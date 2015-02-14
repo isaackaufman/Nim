@@ -23,6 +23,12 @@ public class Nim
 		this.maxObjects = maxObjects;
 	}
 
+	// can also construct with an integer to be passed to the construction of a Pile object
+	public Nim(int pileSize, int maxObjects)
+	{
+		this.pile = new Pile(pileSize);
+	}
+
 	private void setPlayers (Player[] players)
 	{
 		this.players = players;
@@ -36,15 +42,18 @@ public class Nim
 		// and this
 		nim.setPlayers(new Player[] {new HumanPlayer(nim.pile, nim.maxObjects), new SmartAIPlayer(nim.pile, nim.maxObjects)});
 
-		while (!nim.pile.isEmpty())
+		while (true)
 		{
+			// winning/losing message isnt so clear right now, something that can be changed when a GUI is implemented
+			if (nim.pile.isEmpty()) { System.out.println("Game Over!"); break; }
 			for (Player player : nim.players)
 			{
-				System.out.println("There are " + nim.pile.getObjectsLeft() + " pieces left.");
 
-				// eh, do something maybe
-				if (nim.pile.isEmpty()) { System.out.println("Game Over!"); break;}
+				System.out.println("There are " + nim.pile.getObjectsLeft() + " pieces left.");
 				player.takeTurn();
+
+				// check for a win after each player takes turn
+				if (nim.pile.isEmpty()) { break; }
 			}
 		}
 	}

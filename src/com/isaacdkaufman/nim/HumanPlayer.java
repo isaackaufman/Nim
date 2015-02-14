@@ -10,8 +10,10 @@ import javax.swing.JOptionPane;
 public class HumanPlayer implements Player
 {
 
+	// Pile to act upon
 	private Pile pile;
 
+	// max objects which can be taken
 	private int maxObjects;
 
 	public HumanPlayer(Pile pile, int maxObjects)
