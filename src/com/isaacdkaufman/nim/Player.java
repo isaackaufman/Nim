@@ -6,12 +6,6 @@ package com.isaacdkaufman.nim;
 
 public interface Player
 {
-
-	// Pile to act upon
-	//private Pile pile;
-
-	// max objects which can be taken
-	//private int maxObjects;
-
+	// define logic for (prompting user and) altering a Pile object
 	void takeTurn();
 }

@@ -38,7 +38,7 @@ public class Pile
 	}
 
 	// get current size of Arraylist
-	public int getSize ()
+	public int getObjectsLeft ()
 	{
 		return this.gelt.size();
 	}
@@ -52,6 +52,10 @@ public class Pile
 		}
 	}
 
+	public boolean isEmpty ()
+	{
+		return this.getObjectsLeft() < 1;
+	}
 	public Pile clone ()
 	{
 		return new Pile(this.indicies);

@@ -29,10 +29,11 @@ public class SmartAIPlayer implements Player
 	public void takeTurn ()
 	{
 		// if the number of objects in the Pile are not a multiple of the max objects which can be taken plus 1
-		if (!(this.pile.getSize() % (maxObjects + 1) == 0))
+		if (!(this.pile.getObjectsLeft() % (maxObjects + 1) == 0))
 		{
 			// take the objects which would leave the other player with a multiple of maxObjects + 1
-			this.pile.takeGelt(pile.getSize() % (maxObjects + 1));
+			// this accounts for a Pile with size <= maxObjects as the result of the modular operation will be equal to the number of remaining objects resulting in a win
+			this.pile.takeGelt(pile.getObjectsLeft() % (maxObjects + 1));
 		}
 		else
 		{
